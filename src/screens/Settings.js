@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-
+import { Button } from 'react-native-paper';
+import { AuthContext } from '../helpers/AuthContext';
 const Settings = ({ ...props }) => {
+    const { signOut } = useContext(AuthContext)
     return (
         <View style={styles.container}>
             <Text>This is the settings screen</Text>
+            <Button mode="contained" onPress={() => signOut()}>
+                Log out
+            </Button>
         </View>
     );
 }
