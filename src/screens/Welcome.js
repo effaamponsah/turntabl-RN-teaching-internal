@@ -7,7 +7,7 @@ const Welcome = ({ navigation, ...props }) => {
         <View style={styles.container}>
             {/* SignUp */}
             <View style={styles.title}>
-                <Title style={{ fontSize: 30 }}>Sign Up or Log In.</Title>
+                <Title style={{ fontSize: 25 }}>Sign Up or Log In.</Title>
             </View>
             {/* Dont worry */}
             <View style={styles.paragraph}>
@@ -38,7 +38,7 @@ const Welcome = ({ navigation, ...props }) => {
                     Continue with Google
                 </Button>
             </View>
-            <View style={{ marginTop: 30, flexWrap: 'wrap' }}>
+            <View style={{ marginTop: 10, flexWrap: 'wrap' }}>
                 <Caption>
                     Or
                 </Caption>
@@ -49,7 +49,7 @@ const Welcome = ({ navigation, ...props }) => {
                 <Button
                     dark={true}
                     style={{ height: 45, justifyContent: 'center' }}
-                    uppercase={false} mode="contained" onPress={() => navigation.push('Login')} color='#18be6a'>
+                    uppercase={false} mode="contained" onPress={() => navigation.push('Login')}>
                     Continue with Email
                 </Button>
             </View>

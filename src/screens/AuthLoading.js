@@ -4,7 +4,7 @@ import { ActivityIndicator } from 'react-native-paper';
 const AuthLoading = () => {
     return (
         <View style={styles.container}>
-            <ActivityIndicator animating={true} />
+            <ActivityIndicator animating={true} color='#18be6a'/>
         </View>
     );
 }

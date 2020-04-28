@@ -5,6 +5,7 @@ import AuthStack from './AuthStack';
 import { AsyncStorage } from 'react-native';
 import { AuthContext } from '../helpers/AuthContext';
 import AuthLoading from '../screens/AuthLoading';
+import { Snackbar } from 'react-native-paper';
 const RootNavigator = () => {
 
     const [state, dispatch] = useReducer(
@@ -90,6 +91,15 @@ const RootNavigator = () => {
                 // In the example, we'll use a dummy token
 
                 dispatch({ type: 'SIGN_IN', token: 'dummy-auth-token' });
+            },
+            resetPass: async data => {
+                // In a production app, we need to send user data to server and get a token
+                // We will also need to handle errors if sign up failed
+                // After getting token, we need to persist the token using `AsyncStorage`
+                // In the example, we'll use a dummy token
+                alert(JSON.stringify(data))
+
+               
             },
         }),
         []
