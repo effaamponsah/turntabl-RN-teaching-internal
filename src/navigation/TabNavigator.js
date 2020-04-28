@@ -5,6 +5,7 @@ import Explore from '../screens/Explore';
 import Categories from '../screens/Categories';
 import Notifications from '../screens/Notifications';
 import Settings from '../screens/Settings';
+import ExploreStack from './ExploreStack';
 const TabNavigator = () => {
     return (
         <TabNav.Navigator
@@ -14,7 +15,7 @@ const TabNavigator = () => {
         >
             <TabNav.Screen
                 name="Explore"
-                component={Explore}
+                component={ExploreStack}
                 options={{
                     tabBarIcon: 'compass-outline'
                 }}

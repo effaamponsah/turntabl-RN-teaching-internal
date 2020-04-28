@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Explore from '../screens/Explore';
-import Settings from '../screens/Settings';
+import PopularServices from '../screens/PopularServices';
+import Search from '../screens/Search';
 
 const ExploreNav = createStackNavigator();
 
@@ -21,11 +21,13 @@ const ExploreStack = ({ ...props }) => {
                 }}
             />
             <ExploreNav.Screen
-                name="Setting"
-                component={Settings}
-                options={{
-                    title: 'Setting'
-                }}
+                name="Popular"
+                component={PopularServices}
+            />
+            <ExploreNav.Screen
+                name="Search"
+                component={Search}
+               
             />
         </ExploreNav.Navigator>
     );

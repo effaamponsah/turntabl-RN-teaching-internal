@@ -7,7 +7,7 @@ const Settings = ({ ...props }) => {
     return (
         <View style={styles.container}>
             <Text>This is the settings screen</Text>
-            <Button mode="contained" onPress={() => signOut()}>
+            <Button dark={true} mode="contained" onPress={() => signOut()}>
                 Log out
             </Button>
         </View>

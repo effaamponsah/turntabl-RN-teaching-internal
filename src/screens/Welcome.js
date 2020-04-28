@@ -1,8 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
-import { Title, Paragraph, Caption, Button, Divider } from 'react-native-paper';
+import { Title, Paragraph, Caption, Button, Divider, Dialog, Portal } from 'react-native-paper';
 const SCREEN = Dimensions.get('window')
 const Welcome = ({ navigation, ...props }) => {
+
+    const [showDialog, setShowDialog] = useState(false)
+
+    const renderDialog = () => {
+        return (
+            <View>
+                <Portal>
+                    <Dialog
+                        visible={showDialog}
+                        onDismiss={() => setShowDialog(false)}>
+                        <Dialog.Title>Errrm</Dialog.Title>
+                        <Dialog.Content>
+                            <Paragraph>We are heavily working on this feature and it will be available soon</Paragraph>
+                        </Dialog.Content>
+                        <Dialog.Actions>
+                            <Button onPress={() => setShowDialog(false)} uppercase={false}>Okay</Button>
+                        </Dialog.Actions>
+                    </Dialog>
+                </Portal>
+            </View>
+        )
+    }
     return (
         <View style={styles.container}>
             {/* SignUp */}
@@ -25,7 +47,7 @@ const Welcome = ({ navigation, ...props }) => {
             <View style={{ marginTop: 20 }}>
                 <Button icon="facebook-box"
                     style={{ height: 45, justifyContent: 'center' }}
-                    uppercase={false} mode="contained" onPress={() => console.log('Pressed')} color='#3b5999'>
+                    uppercase={false} mode="contained" onPress={() => setShowDialog(true)} color='#3b5999'>
                     Continue with Facebook
                 </Button>
             </View>
@@ -34,15 +56,14 @@ const Welcome = ({ navigation, ...props }) => {
             <View style={{ marginTop: 20 }}>
                 <Button icon="google"
                     style={{ height: 45, justifyContent: 'center' }}
-                    uppercase={false} mode='outlined' onPress={() => console.log('Pressed')} color='#000'>
+                    uppercase={false} mode='outlined' onPress={() => setShowDialog(true)} color='#000'>
                     Continue with Google
                 </Button>
             </View>
-            <View style={{ marginTop: 10, flexWrap: 'wrap' }}>
+            <View style={{ alignItems: 'center', marginTop: 10 }}>
                 <Caption>
                     Or
                 </Caption>
-                <Divider />
             </View>
             {/* Email button */}
             <View style={{ marginTop: 20 }}>
@@ -53,6 +74,8 @@ const Welcome = ({ navigation, ...props }) => {
                     Continue with Email
                 </Button>
             </View>
+
+            {renderDialog()}
         </View>
     );
 }
