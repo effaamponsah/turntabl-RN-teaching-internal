@@ -13,7 +13,7 @@ const RootNavigator = () => {
             switch (action.type) {
                 case 'RESTORE_TOKEN':
                     return {
-                        ...prevState,
+                        ...prevState, //not really important for our use case right now
                         userToken: action.token,
                         isLoading: false,
                     };

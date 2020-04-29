@@ -1,10 +1,23 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import { Title, Paragraph, Caption, Button, Divider, Dialog, Portal } from 'react-native-paper';
+import OnboardScreen from './Onboardcreen';
+
 const SCREEN = Dimensions.get('window')
 const Welcome = ({ navigation, ...props }) => {
 
     const [showDialog, setShowDialog] = useState(false)
+    const [onBoard, setOnBoard] = useState(true)
+
+    const skip = () => setOnBoard(false)
+
+    if (onBoard == true) {
+        return (
+            <OnboardScreen
+                skipped={skip}
+            />
+        )
+    }
 
     const renderDialog = () => {
         return (
