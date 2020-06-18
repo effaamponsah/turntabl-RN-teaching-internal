@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
-import { Text } from 'react-native-paper';
+import { Text, Surface } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 const SCREEN = Dimensions.get('window')
 const PopularCard = ({ text, icon, bgColor, ...props }) => {
@@ -12,12 +12,13 @@ const PopularCard = ({ text, icon, bgColor, ...props }) => {
                 backgroundColor: bgColor,
                 marginTop: 10,
                 borderRadius: 10,
-                padding: 10
+                padding: 10,
+                elevation: 4,
             }}>
-                <MaterialCommunityIcons name={icon} color='#fff' size={20} />
-                <View style={styles.lowerText}>
-                    <Text style={{ color: '#fff',fontSize: 13 }}>{text}</Text>
-                </View>
+                    <MaterialCommunityIcons name={icon} color='#fff' size={20} />
+                    <View style={styles.lowerText}>
+                        <Text style={{ color: '#fff', fontSize: 13 }}>{text}</Text>
+                    </View>
             </TouchableOpacity>
         </View>
     );
@@ -26,7 +27,7 @@ const PopularCard = ({ text, icon, bgColor, ...props }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginRight: 10
+        marginRight: 15
     },
     card:
     {

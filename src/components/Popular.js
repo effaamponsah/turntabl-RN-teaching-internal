@@ -43,9 +43,11 @@ const Popular = () => {
                 >
                     {
                         fakeData.map(data => (
-                            <View>
+                            <View
+                                key={data.id}
+                            >
                                 <PopularCard
-                                    key={data.id}
+
                                     text={data.text}
                                     icon={data.icon}
                                     bgColor={data.color}
